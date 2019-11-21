@@ -1,0 +1,60 @@
+// 默认主题色
+$themeColor: #27AAE7;
+$successColor: #52C41A;
+$warningColor: #FAAD14;
+$errorColor: #F5222D;
+$themeHoverColor: rgba($themeColor, .7);
+$themeActiveColor:  rgba($themeColor, 1);
+
+
+// 侧边栏
+$sideBarWidth: 240px;
+$sideBarWidthSmall: 54px;
+$sideBarHeight: 48px;
+$breadcrumbHeight: 48px; // 收缩按钮
+
+$navBarHeight: 56px;
+
+// 侧边栏/面包屑背景色
+$barBgColor: #fff;
+$barColor: #fff;
+
+//阴影
+$barShadow: 2px 0px 8px 0px rgba(0,0,0,0.06) ;
+$messageBoxShadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
+
+// 内外边距
+$padding: 20px;
+$margin: 16px;
+
+$dialogPadding: 22px;
+
+// dialog
+$dialogHeaderHeight: 56px;
+$dialogFooterHeight: 52px;
+
+// border
+$border: 1px solid rgba(233,233,233,1);
+
+// table
+$hearderBgColor: rgba(250,250,250,1);
+
+// 字体
+$fontColorStrong: rgba(0, 0, 0, .85); // 强调的文字
+$fontColorBody: rgba(0, 0, 0, .65); // 内容文字
+$fontColorSmall: rgba(0, 0, 0, .45); // 次要文字
+$fontColorDisabled: rgba(0, 0, 0, .25); // 不可用
+$fontWeight: 400; //正常
+$fontWeightStrong: 900; //正常
+
+// :export 导出当前定义的样式变量
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  theme: $themeColor;
+  themeHoverColor: $themeHoverColor;
+  themeActiveColor: $themeActiveColor;
+  sideBarWidth: $sideBarWidth;
+  sideBarHeight: $sideBarHeight;
+  breadcrumbHeight: $breadcrumbHeight;
+  navBarHeight: $navBarHeight;
+}
