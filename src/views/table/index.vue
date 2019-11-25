@@ -12,15 +12,15 @@
         :table-date="list"
         :table="this"
       >
-        <el-row  :gutter="10" slot="search">
+        <el-row slot="search" :gutter="10">
           <el-col :span="4">
-            <el-input placeholder="搜索"  prefix-icon="el-icon-search"></el-input>
+            <el-input placeholder="搜索" prefix-icon="el-icon-search" />
           </el-col>
           <el-col :span="4">
-            <el-input placeholder="搜索"  prefix-icon="el-icon-search"></el-input>
+            <el-input placeholder="搜索" prefix-icon="el-icon-search" />
           </el-col>
           <el-col :span="4">
-            <el-input placeholder="搜索"  prefix-icon="el-icon-search"></el-input>
+            <el-input placeholder="搜索" prefix-icon="el-icon-search" />
           </el-col>
         </el-row>
       </Table>
@@ -156,7 +156,7 @@ export default {
         [{ name: '操作1', icon: '', fun: 'testEvent' }]
         `, defaultValue: '--' },
         { name: 'autoInit(非必填)', desc: '是否自定义获取表格数据', type: 'Boolean', value: 'false/true', defaultValue: '--' },
-        { name: 'getListParams(非必填)', desc: '发送获取表格请求的参数', type: 'JSON', value: '--', defaultValue: '--' },
+        { name: 'getListParams(非必填)', desc: '发送获取表格请求的参数', type: 'JSON', value: '--', defaultValue: '--' }
       ],
       tableEventConfig: [
         { name: 'init-table', desc: '初始化表格', value: '发起请求' }
@@ -201,7 +201,7 @@ export default {
         { name: '操作1', icon: '', fun: 'testEvent' },
         { name: '操作1', icon: '', fun: 'testEvent' },
         { name: '操作1', icon: '', fun: 'testEvent' },
-        { name: '操作1', icon: '', fun: 'testEvent' },
+        { name: '操作1', icon: '', fun: 'testEvent' }
       ]
     }
   },
@@ -216,7 +216,7 @@ export default {
         this.listLoading = false
       })
     },
-    testEvent(){
+    testEvent() {
 
     }
   }

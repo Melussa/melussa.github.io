@@ -5,17 +5,16 @@
  * 所有权限的用户均可访问
  */
 
-
 /* Layout *//* Layout */
-const Layout = ()=>import("@/layout")
+const Layout = () => import('@/layout')
 
 // 懒加载的loading 避免点击跳转路由之后js没有被下载完成之前造成的点击无效问题
-import {Loading} from 'element-ui';
+import { Loading } from 'element-ui'
 
 let LoadingService = null
-let spinRoute = {
-  show() {//加载中显示loading组件
-    if(!LoadingService) {
+const spinRoute = {
+  show() { // 加载中显示loading组件
+    if (!LoadingService) {
       LoadingService = Loading.service({
         text: '模块载入中, 请稍后...',
         spinner: '',
@@ -23,9 +22,9 @@ let spinRoute = {
       })
     }
   },
-  resolve(resolve) {//加载完成隐藏loading组件
+  resolve(resolve) { // 加载完成隐藏loading组件
     return component => {
-      if(LoadingService){
+      if (LoadingService) {
         LoadingService.close()
         LoadingService = null
       }
@@ -45,13 +44,12 @@ export const constantRoutes = [
 
   {
     path: '/404',
-    component:resolve => {
+    component: resolve => {
       spinRoute.show()
       require(['@/views/404'], spinRoute.resolve(resolve))
     },
     hidden: true
   },
-  // test  change
   {
     path: '/',
     component: Layout,
@@ -104,7 +102,7 @@ export const constantRoutes = [
       {
         path: 'autoCloseMessage',
         name: 'AutoCloseMessage',
-        component:  resolve => {
+        component: resolve => {
           spinRoute.show()
           require(['@/views/autoClose/index'], spinRoute.resolve(resolve))
         },
@@ -146,15 +144,15 @@ export const constantRoutes = [
         },
         meta: { title: 'Table（表格）', icon: 'table' }
       },
-      // {
-      //   path: 'form',
-      //   name: 'Form',
-      //   component: resolve => {
-      //     spinRoute.show()
-      //     require(['@/views/form/index'], spinRoute.resolve(resolve))
-      //   },
-      //   meta: { title: 'Form（表单）', icon: 'form' }
-      // }
+      {
+        path: 'form',
+        name: 'Form',
+        component: resolve => {
+          spinRoute.show()
+          require(['@/views/form/index'], spinRoute.resolve(resolve))
+        },
+        meta: { title: 'Form（表单）', icon: 'form' }
+      }
     ]
   }
 ]

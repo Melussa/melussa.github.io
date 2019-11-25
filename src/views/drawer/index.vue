@@ -193,10 +193,10 @@ export default {
        * 显示抽屉
        */
     onShowDrawerEvent(type) {
-      console.log(type);
+      console.log(type)
       if (typeof type === 'string') {
         this.drawerConfig.isShowFooter = false
-      }else {
+      } else {
         this.drawerConfig.isShowFooter = true
       }
       this.drawerConfig.isVisible = true

@@ -7,7 +7,7 @@
     <div class="my-table-header">
       <span class="my-table-header-left">{{ tableConfig.title }}</span>
       <!-- 按条件查询模块 -->
-      <div class="search" v-if="!tableConfig.title">
+      <div v-if="!tableConfig.title" class="search">
         <slot name="search" />
       </div>
       <div v-if="tableConfig.showHeaderOption" class="my-table-header-right">
@@ -58,8 +58,15 @@
         <!-- 表格多选设置 -->
         <el-table-column v-if="tableConfig.selectMore" type="selection" align="center" width="50" />
         <!-- 表格编号设置 -->
-        <el-table-column v-if="tableConfig.isIndexShow" label="编号" type="index" fixed="left"
-                         align="center" width="70" :index="_tableIndex" />
+        <el-table-column
+          v-if="tableConfig.isIndexShow"
+          label="编号"
+          type="index"
+          fixed="left"
+          align="center"
+          width="70"
+          :index="_tableIndex"
+        />
 
         <!-- 表格列循环设置 -->
         <!--        v-if="column.isHide"-->
@@ -180,7 +187,7 @@ export default {
   name: 'Table',
   components: { },
   props: {
-    Table: {
+    table: {
       type: Object,
       default() {}
     },

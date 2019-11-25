@@ -37,51 +37,51 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
-  import { message, notification, confirm, autoCloseMessage } from '@/utils/message-navication'
+import { mapGetters } from 'vuex'
+import { message, notification, confirm, autoCloseMessage } from '@/utils/message-navication'
 
-  // 主题
-  import { themeLists } from '@/utils/common-config'
-  import ThemePicker from '@/components/ThemePicker'
-  // 高级搜索
-  import MoreSearch from '@/components/MoreSearch'
-  import Form from '@/components/Form'
-  export default {
-    name: 'Dashboard',
-    components: { ThemePicker, MoreSearch, Form },
-    data() {
-      return {
-        theader: ['参数位置', '说明', '类型', '可选值', '是否必填'],
-        tableConfig: [
-          { name: '第一个参数', desc: '当前组件this', type: 'Object', value: 'this', defaultValue: '必填' },
-          { name: '第二个参数', desc: '提示标题', type: 'String', value: '--', defaultValue: '必填' },
-          { name: '第三个参数', desc: '提示内容', type: 'String', value: '--', defaultValue: '必填' },
-          { name: '第二个参数', desc: '点击确定之后的回调', type: 'Function', value: '() => {}', defaultValue: '必填' },
-          { name: '第五个参数', desc: '是否为二次确认框', type: 'Boolean', value: 'true/false', defaultValue: '非必填' },
-          { name: '第六个参数(默认值为success)', desc: '确认框类型', type: 'String', value: 'success/info/warning/error', defaultValue: '非必填' }
-        ]
-      }
-    },
-    computed: {
-      ...mapGetters([
-        'name'
-      ])
-    },
-    methods: {
-      /**
+// 主题
+import { themeLists } from '@/utils/common-config'
+import ThemePicker from '@/components/ThemePicker'
+// 高级搜索
+import MoreSearch from '@/components/MoreSearch'
+import Form from '@/components/Form'
+export default {
+  name: 'Dashboard',
+  components: { ThemePicker, MoreSearch, Form },
+  data() {
+    return {
+      theader: ['参数位置', '说明', '类型', '可选值', '是否必填'],
+      tableConfig: [
+        { name: '第一个参数', desc: '当前组件this', type: 'Object', value: 'this', defaultValue: '必填' },
+        { name: '第二个参数', desc: '提示标题', type: 'String', value: '--', defaultValue: '必填' },
+        { name: '第三个参数', desc: '提示内容', type: 'String', value: '--', defaultValue: '必填' },
+        { name: '第二个参数', desc: '点击确定之后的回调', type: 'Function', value: '() => {}', defaultValue: '必填' },
+        { name: '第五个参数', desc: '是否为二次确认框', type: 'Boolean', value: 'true/false', defaultValue: '非必填' },
+        { name: '第六个参数(默认值为success)', desc: '确认框类型', type: 'String', value: 'success/info/warning/error', defaultValue: '非必填' }
+      ]
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'name'
+    ])
+  },
+  methods: {
+    /**
        * 显示提示确认框
        */
-      showConfirmEvent(type) {
-        let currentType = type
-        if (type === 'noCancel') {
-          currentType = 'success'
-        }
-        confirm(this, '提示信息的标题', '提示信息的主要内容', (val) => {
-          console.log(val)
-        }, type === 'noCancel', currentType)
+    showConfirmEvent(type) {
+      let currentType = type
+      if (type === 'noCancel') {
+        currentType = 'success'
       }
+      confirm(this, '提示信息的标题', '提示信息的主要内容', (val) => {
+        console.log(val)
+      }, type === 'noCancel', currentType)
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

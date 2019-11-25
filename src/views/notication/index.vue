@@ -77,11 +77,11 @@ export default {
        * 显示文本提示
        */
     onShowNavicationTips(hasBtn) {
-      let params = [this, '问题提示的标题问题提示的标题问题提示的标题问题提示的标题', '文本提示的内容', 'success']
-      if( hasBtn === 'noIcon' ){
+      const params = [this, '问题提示的标题问题提示的标题问题提示的标题问题提示的标题', '文本提示的内容', 'success']
+      if (hasBtn === 'noIcon') {
         params.pop(params.length - 1)
       }
-      console.log(params);
+      console.log(params)
       if (hasBtn === 'hasBtn') {
         notification(...params)
       } else {
