@@ -81,23 +81,17 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { message, notification, confirm, autoCloseMessage } from '@/utils/message-navication'
 
 // 主题
 import { themeLists } from '@/utils/common-config'
 import ThemePicker from '@/components/ThemePicker'
 // 高级搜索
 import MoreSearch from '@/components/MoreSearch'
-import Form from '@/components/Form'
 export default {
   name: 'Dashboard',
-  components: { ThemePicker, MoreSearch, Form },
+  components: { ThemePicker, MoreSearch },
   data() {
     return {
-      isShowAlert: false,
-      alertMessage: '',
-      alertType: '',
-
       currentLists: themeLists.whiteStyle,
       setTheme: 'style1',
       listTypeInfo: {
@@ -165,18 +159,6 @@ export default {
       console.log(type)
       const { data } = this.formInfo
       console.log(data)
-    },
-    /**
-     * 显示提示确认框
-     */
-    showConfirmEvent(type) {
-      let currentType = type
-      if (type === 'noCancel') {
-        currentType = 'success'
-      }
-      confirm(this, '提示信息的标题', '提示信息的主要内容', (val) => {
-        console.log(val)
-      }, type === 'noCancel', currentType)
     }
   }
 }

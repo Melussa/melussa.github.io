@@ -38,17 +38,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { message, notification, confirm, autoCloseMessage } from '@/utils/message-navication'
+import { confirm } from '@/utils/message-navication'
 
-// 主题
-import { themeLists } from '@/utils/common-config'
-import ThemePicker from '@/components/ThemePicker'
-// 高级搜索
-import MoreSearch from '@/components/MoreSearch'
-import Form from '@/components/Form'
 export default {
   name: 'Dashboard',
-  components: { ThemePicker, MoreSearch, Form },
+  components: { },
   data() {
     return {
       theader: ['参数位置', '说明', '类型', '可选值', '是否必填'],

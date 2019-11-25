@@ -6827,10 +6827,10 @@ memory-fs@^0.5.0:
     errno "^0.1.3"
     readable-stream "^2.0.1"
 
-mengui@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/mengui/-/mengui-0.0.7.tgz#9e8a325a9ecd3a96e09bffb5f882fc98f920688d"
-  integrity sha512-wNoy0e/W6/DZt2RkuiM5PI+t+LbqMuJNdoPzeNPoUKOHqFisWp9j7uERwqgL7aPhbnIQ86QzD5G96QzSoLxOeQ==
+mengui@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/mengui/-/mengui-0.1.0.tgz#ab4e8f11e21de81a1aa4bc503a4b5756efb23a65"
+  integrity sha512-viSnda9HZ9J45noVPrva5IjHblljix4x8H6rSjPwOxDNh9OlfdQfOPkSn8xD8TzyADAVd7JE6ACob8mqrOXfBw==
   dependencies:
     element-ui "^2.12.0"
     vue "^2.5.11"
