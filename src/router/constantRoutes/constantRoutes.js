@@ -82,6 +82,24 @@ export const constantRoutes = [
         meta: { title: 'Dialog', icon: 'form' }
       },
       {
+        path: 'form',
+        name: 'Form',
+        component: resolve => {
+          spinRoute.show()
+          require(['@/views/form/index'], spinRoute.resolve(resolve))
+        },
+        meta: { title: 'Form（表单）', icon: 'form' }
+      },
+      {
+        path: 'theme',
+        name: 'Theme',
+        component: resolve => {
+          spinRoute.show()
+          require(['@/views/theme-picker/index'], spinRoute.resolve(resolve))
+        },
+        meta: { title: 'Theme（切换主题）', icon: 'form' }
+      },
+      {
         path: 'drawer',
         name: 'Drawer',
         component: resolve => {
@@ -143,15 +161,6 @@ export const constantRoutes = [
           require(['@/views/table/index'], spinRoute.resolve(resolve))
         },
         meta: { title: 'Table（表格）', icon: 'table' }
-      },
-      {
-        path: 'form',
-        name: 'Form',
-        component: resolve => {
-          spinRoute.show()
-          require(['@/views/form/index'], spinRoute.resolve(resolve))
-        },
-        meta: { title: 'Form（表单）', icon: 'form' }
       }
     ]
   }

@@ -55,11 +55,8 @@
       </section>
     </section>
     <!--    <h3> 1.替换主题 </h3>-->
-    <!--    <el-radio-group v-model="setTheme" class="select-style" @change="onSetTheme">-->
-    <!--      <el-radio-button label="style1">style1</el-radio-button>-->
-    <!--      <el-radio-button label="style2">style2</el-radio-button>-->
-    <!--    </el-radio-group>-->
-    <!--    <theme-picker class="theme-dropdown" :current-lists="currentLists" @change="themeChange" />-->
+
+<!--        <theme-picker class="theme-dropdown" :current-lists="currentLists" @change="themeChange" />-->
     <!--    <h3> 2.高级搜索组件封装 </h3>-->
     <!--    <MoreSearch @searchLists="onSearchTableLists">-->
     <!--      &lt;!&ndash;   默认搜索栏目   &ndash;&gt;-->
@@ -82,17 +79,13 @@
 <script>
 import { mapGetters } from 'vuex'
 
-// 主题
-import { themeLists } from '@/utils/common-config'
-import ThemePicker from '@/components/ThemePicker'
 // 高级搜索
 import MoreSearch from '@/components/MoreSearch'
 export default {
   name: 'Dashboard',
-  components: { ThemePicker, MoreSearch },
+  components: { MoreSearch },
   data() {
     return {
-      currentLists: themeLists.whiteStyle,
       setTheme: 'style1',
       listTypeInfo: {
         tagTypeList: [],
@@ -123,28 +116,6 @@ export default {
     ])
   },
   methods: {
-    /**
-     * 切换主题风格
-     * @param val
-     */
-    onSetTheme(val) {
-      const { whiteStyle, blackStyle } = themeLists
-      if (val === 'style1') { // 风格1
-        this.currentLists = whiteStyle
-      } else { // 风格2
-        this.currentLists = blackStyle
-      }
-    },
-    /**
-     * 确认更改主题
-     * @param val
-     */
-    themeChange(val) {
-      this.$store.dispatch('settings/changeSetting', {
-        key: 'theme',
-        value: val
-      })
-    },
     /**
      * 点击单个form-item事件
      */
