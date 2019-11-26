@@ -50,7 +50,7 @@ $fontWeightStrong: 900; //正常
 // :export 导出当前定义的样式变量
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 :export {
-  theme: $themeColor;
+  themeColor: $themeColor;
   themeHoverColor: $themeHoverColor;
   themeActiveColor: $themeActiveColor;
   sideBarWidth: $sideBarWidth;
