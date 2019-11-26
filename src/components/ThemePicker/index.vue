@@ -141,7 +141,7 @@ export default {
             resolve()
           }
         }
-        xhr.open('GET', url)
+        xhr.open('GET', url, true)
         xhr.send()
       })
     },

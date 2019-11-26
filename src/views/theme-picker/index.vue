@@ -67,7 +67,7 @@
         theader: ['参数', '说明', '类型', '可选值', '默认值'],
         eventTheader: ['事件名称', '说明', '回调'],
         tableConfig: [
-          { name: 'currentLists', desc: '可供选择的主题色列表', type: 'Array', defaultValue: '--' }
+          { name: 'currentLists', desc: '可供选择的主题色列表', type: 'Array',value: '--', defaultValue: '--' }
         ],
         tableEventConfig: [
           { name: 'change', desc: '确定选择的主题色', value: '确定主题色的时候监听' }
