@@ -43,9 +43,9 @@ export default {
       },
       immediate: true
     },
-    async theme(val, oldVal) {
+    async theme(val) {
       // 这个需要隐藏  否则不能修改  其他颜色 因为这种写法会限制死了修改主题的范围
-      // const oldVal = this.chalk ? this.theme : ORIGINAL_THEME
+      const oldVal = this.chalk ? this.theme : ORIGINAL_THEME
       console.log(this.theme, oldVal)
       if (typeof val !== 'string') return
       const themeCluster = this.getThemeCluster(val.replace('#', ''))
@@ -141,7 +141,7 @@ export default {
             resolve()
           }
         }
-        xhr.open('GET', url, true)
+        xhr.open('GET', url)
         xhr.send()
       })
     },
