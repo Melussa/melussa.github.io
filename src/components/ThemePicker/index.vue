@@ -43,9 +43,9 @@ export default {
       },
       immediate: true
     },
-    async theme(val) {
+    async theme(val, oldVal) {
       // 这个需要隐藏  否则不能修改  其他颜色 因为这种写法会限制死了修改主题的范围
-      const oldVal = this.chalk ? this.theme : ORIGINAL_THEME
+      // const oldVal = this.chalk ? this.theme : ORIGINAL_THEME
       console.log(this.theme, oldVal)
       if (typeof val !== 'string') return
       const themeCluster = this.getThemeCluster(val.replace('#', ''))
@@ -73,14 +73,14 @@ export default {
         }
       }
 
-      if (!this.chalk) {
-        const url = `https://unpkg.com/element-ui@${version}/lib/theme-chalk/index.css`
-        await this.getCSSString(url, 'chalk')
-      }
-
       const chalkHandler = getHandler('chalk', 'chalk-style')
 
-      chalkHandler()
+      if (!this.chalk) {
+        const url = `https://unpkg.com/element-ui@${version}/lib/theme-chalk/index.css`
+        await this.getCSSString(url, chalkHandler, 'chalk')
+      }else {
+        chalkHandler()
+      }
 
       const styles = [].slice.call(document.querySelectorAll('style'))
         .filter(style => {
@@ -96,6 +96,10 @@ export default {
       // 响应外部操作
       this.$emit('change', val)
       $message.close()
+      this.$message({
+        message: '换肤成功',
+        type: 'success'
+      })
     }
   },
   created() {
@@ -129,15 +133,17 @@ export default {
     /**
      * 获取element 样式
      * @param url 获取地址
+     * @param callback
      * @param variable  当前样式文件名
      * @returns {Promise<unknown>}
      */
-    getCSSString(url, variable) {
+    getCSSString(url, callback, variable) {
       return new Promise(resolve => {
         const xhr = new XMLHttpRequest()
         xhr.onreadystatechange = () => {
           if (xhr.readyState === 4 && xhr.status === 200) {
             this[variable] = xhr.responseText.replace(/@font-face{[^}]+}/, '')
+            callback()
             resolve()
           }
         }
