@@ -54,24 +54,22 @@
         </pre>
       </section>
     </section>
-    <!--    <h3> 1.替换主题 </h3>-->
 
-<!--        <theme-picker class="theme-dropdown" :current-lists="currentLists" @change="themeChange" />-->
-    <!--    <h3> 2.高级搜索组件封装 </h3>-->
-    <!--    <MoreSearch @searchLists="onSearchTableLists">-->
-    <!--      &lt;!&ndash;   默认搜索栏目   &ndash;&gt;-->
-    <!--      <template slot="searchInp">-->
-    <!--        <Form-->
-    <!--          :ref-obj.sync="formInfo.ref"-->
-    <!--          :data="formInfo.data"-->
-    <!--          :field-list="formInfo.fieldList"-->
-    <!--          :rules="formInfo.rules"-->
-    <!--          :label-width="formInfo.labelWidth"-->
-    <!--          :list-type-info="listTypeInfo"-->
-    <!--          @handleEvent="onSearchLists"-->
-    <!--        />-->
-    <!--      </template>-->
-    <!--    </MoreSearch>-->
+        <h3> 2.高级搜索组件封装 </h3>
+<!--        <MoreSearch @searchLists="onSearchTableLists">-->
+<!--          &lt;!&ndash;   默认搜索栏目   &ndash;&gt;-->
+<!--          <template slot="searchInp">-->
+<!--            <Form-->
+<!--              :ref-obj.sync="formInfo.ref"-->
+<!--              :data="formInfo.data"-->
+<!--              :field-list="formInfo.fieldList"-->
+<!--              :rules="formInfo.rules"-->
+<!--              :label-width="formInfo.labelWidth"-->
+<!--              :list-type-info="listTypeInfo"-->
+<!--              @handleEvent="onSearchLists"-->
+<!--            />-->
+<!--          </template>-->
+<!--        </MoreSearch>-->
 
   </div>
 </template>

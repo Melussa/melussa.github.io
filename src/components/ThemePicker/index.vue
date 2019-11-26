@@ -77,7 +77,7 @@ export default {
 
       if (!this.chalk) {
         const url = `https://unpkg.com/element-ui@${version}/lib/theme-chalk/index.css`
-        await this.getCSSString(url, chalkHandler, 'chalk')
+        await this.getCSSString(url, 'chalk')
       }else {
         chalkHandler()
       }
@@ -98,7 +98,7 @@ export default {
       $message.close()
       this.$message({
         message: '换肤成功',
-        type: 'success'
+        type: 'success',
       })
     }
   },
@@ -133,17 +133,15 @@ export default {
     /**
      * 获取element 样式
      * @param url 获取地址
-     * @param callback
      * @param variable  当前样式文件名
      * @returns {Promise<unknown>}
      */
-    getCSSString(url, callback, variable) {
+    getCSSString(url, variable) {
       return new Promise(resolve => {
         const xhr = new XMLHttpRequest()
         xhr.onreadystatechange = () => {
           if (xhr.readyState === 4 && xhr.status === 200) {
             this[variable] = xhr.responseText.replace(/@font-face{[^}]+}/, '')
-            callback()
             resolve()
           }
         }

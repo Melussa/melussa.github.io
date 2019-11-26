@@ -15,8 +15,9 @@
           >{{ val.name }}</el-button>
         </div>
         <div class="search-more-btn" @click="onShowMoreSearch">
-          <span>{{ openOrClose }}</span>
-          <i :class="isOpenMoreSearch ? 'el-icon-arrow-up close-more-search' : 'el-icon-arrow-up open-more-search'" />
+          <el-link type="primary" :underline="false">{{ openOrClose }}
+            <i :class="isOpenMoreSearch ? 'el-icon-arrow-up close-more-search' : 'el-icon-arrow-up open-more-search'" />
+          </el-link>
         </div>
       </div>
       <transition name="el-zoom-in-top">
@@ -103,13 +104,6 @@ export default {
     cursor: pointer;
     display: inline-block;
     float: left;
-    color: $themeColor;
-    &:hover {
-      color: $themeHoverColor;
-    }
-    &:active {
-      color: $themeActiveColor;
-    }
   }
   .open-more-search{
     transition: .2s ease;
