@@ -156,13 +156,14 @@ export default {
       tableConfig: [
         { name: 'isLoading(非必传，默认false)', desc: '确认按钮是否禁用且loading', type: 'Boolean', value: 'false/true', defaultValue: 'false' },
         { name: 'colNum(非必传，默认2)', desc: 'form是单列显示还是多列显示', type: 'Number', value: '可以被24整除的数值', defaultValue: '2' },
+        { name: 'isShowBtn(非必传，默认true)', desc: '是否显示提交按钮', type: 'Boolean', value: 'true/false', defaultValue: 'true' },
         { name: 'onelineList(非必传)', desc: '在多行form表单中的特殊单行显示项', type: 'Array', value: '[{ value: "v-model的变量名", label: "标签", type: "input之类的标签类型" }]', defaultValue: '--' },
         { name: 'className(非必传)', desc: '自定义类名', type: 'String', value: '--', defaultValue: '--' },
         { name: 'data(必传)', desc: '表单数据', type: 'Object', value: '--', defaultValue: '--' },
         { name: 'fieldList(必传)', desc: '表单相关字段', type: 'Array', value: '[{value: "对应v-model字段名称", label:"字段描述label", type: "form-item类型", list: "有下拉或者其他选项列表的"}]', defaultValue: '--' },
         { name: 'rules(非必传)', desc: '表单验证规则', type: 'Object', value: '与elementUI验证规则相同，可参考', defaultValue: '--' },
         { name: 'listTypeInfo(非必传)', desc: '表单项中，如select或者radio之类的值', type: 'Object', value: '--', defaultValue: '--' },
-        { name: 'labelWidth(非必传, 默认150px)', desc: '表单项label标签的宽度', type: 'String', value: '*px', defaultValue: '150px' },
+        { name: 'labelWidth(非必传, 默认0px)', desc: '表单项label标签的宽度', type: 'String', value: '*px', defaultValue: '0px' },
        ],
       tableEventConfig: [
         { name: 'formItemClick', desc: '表单项的change事件', value: '当需要对表单项进行监听的时候' },
